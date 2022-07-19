@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./reset-password.component.scss']
 })
 export class ResetPasswordComponent implements OnInit {
-  resetform!: FormGroup;
+  resetform: FormGroup;
   submitted = false; 
 
   constructor(private formBuilder: FormBuilder) { }

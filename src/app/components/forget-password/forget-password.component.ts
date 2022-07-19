@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/Services/User/user-service.service';
 
 
 @Component({
@@ -8,24 +9,27 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./forget-password.component.scss']
 })
 export class ForgetPasswordComponent implements OnInit {
-  forgetform!: FormGroup;
+  forgetform: FormGroup;
   submitted = false;
 
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserService) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.forgetform = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]]
-  });
+      mailid: ['', [Validators.required, Validators.email]]
+    });
   }
 
 
 
-  forget(){
-    if(this.forgetform.valid){
+  forget() {
+    if (this.forgetform.valid) {
       console.log(this.forgetform.value)
+      this.userService.forget(this.forgetform.value).subscribe((data) => {
+        console.log(data);
+      })
     }
-    
+
   }
 }
