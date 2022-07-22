@@ -13,6 +13,12 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list'; 
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 
 
 
@@ -20,6 +26,14 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { LoginComponent } from './components/login/login.component';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CreateNoteComponent } from './components/create-note/create-note.component';
+import { DisplayOfNotesComponent } from './components/display-of-notes/display-of-notes.component';
+import { MixNotesComponentComponent } from './components/mix-notes-component/mix-notes-component.component';
+import { IconsComponent } from './components/icons/icons.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -28,6 +42,13 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     LoginComponent,
     ForgetPasswordComponent,
     ResetPasswordComponent,
+    DashboardComponent,
+    CreateNoteComponent,
+    DisplayOfNotesComponent,
+    MixNotesComponentComponent,
+    IconsComponent
+
+    
     
   ],
   imports: [
@@ -42,7 +63,12 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatListModule,
+    MatTooltipModule
     
   ],
   providers: [],

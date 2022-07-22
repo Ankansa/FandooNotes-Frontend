@@ -1,0 +1,85 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+
+    <mat-toolbar class="example-toolbar">
+
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div>
+            <div fxFlex="10" fxLayout="row" fxFlex.gt="500px" matTooltip="Welcome to Fundoo Notes">
+                <img src="assets\Picture\Notelogo.png">
+
+                <h3 class="example-app-name" fxLayoutAlign="center center">
+                    <mat-card-title class="fundoo" fxLayout="row" fxLayoutAlign="end center">
+                        <span id="title">Fundoo</span>
+                    </mat-card-title>
+                </h3>
+            </div>
+        </div>
+        <!-- Search bar -->
+        <div class="searchdiv" fxLayoutAlign="space-between center">
+            <mat-form-field appearance="outline" fxHide.xs [style.fontSize.px]="2" class="search" fxFlex="100">
+                <button mat-icon-button class="search-button">
+                    <mat-icon id="search" matTooltip="Search">search</mat-icon>
+                </button>
+
+                <input fxFlex="50" matInput placeholder="Search" [style.fontSize.px]="16" class="search-window"
+                    autocomplete="off" type="text" />
+
+
+            </mat-form-field>
+        </div>
+        <div class="icondiv" div fxLayout="row" fxLayoutAlign="space-between center">
+            <div class="top_icon" div fxLayout="row" fxLayoutAlign="space-around center">
+                <div>
+                    <img class="icon" src="assets\Picture\Symbols\refresh.png">
+                </div>
+                <div>
+                    <img class="icon" src="assets\Picture\Symbols\Listview.png">
+                </div>
+                <div>
+                    <img class="icon" src="assets\Picture\Symbols\setting.png">
+                </div>
+            </div>
+            <div div fxLayout="row" fxLayoutAlign="space-around center" class="sec_top_icon">
+                <img class="icon" src="assets\Picture\Symbols\apps.png">
+                <img class="icon" src="assets\Picture\Symbols\profile.png">
+            </div>
+        </div>
+
+    </mat-toolbar>
+
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+
+        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+            fixedTopGap="56">
+            <mat-list>
+                <div>
+                    <img src="assets\Picture\Symbols\note.png">
+                    <span>Notes</span>
+                </div>
+                <div>
+                    <img src="assets\Picture\Symbols\reminder.png">
+                    <span>Reminder</span>
+                </div>
+                <div>
+                    <img src="assets\Picture\Symbols\editlevels.png">
+                    <span>Edit lebels</span>
+                </div>
+                <div>
+                    <img src="assets\Picture\Symbols\archive.png">
+                    <span>Archive</span>
+                </div>
+                <div>
+                    <img src="assets\Picture\Symbols\Trash.png">
+                    <span>Trash</span>
+                </div>
+            </mat-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+            <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
