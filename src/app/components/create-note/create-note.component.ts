@@ -28,6 +28,8 @@ export class CreateNoteComponent implements OnInit {
   display() {
     if (this.hide == false) {
       this.hide = true
+    }else{
+      this.hide = false
     }
   }
 

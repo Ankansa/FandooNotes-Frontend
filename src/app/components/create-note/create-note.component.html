@@ -1,44 +1,44 @@
 <!-- 1st Box -->
 <br><br>
-<form [formGroup]="addnoteform"(ngSubmit)="addnote()">
-    <div *ngIf="hide==false" (click)="display()" fxLayoutAlign="center center">
-        <mat-card fxFlex="45" fxLayout="column" fxLayoutAlign=" stretch" class="matcard">
+<div *ngIf="hide==false" (click)="display()"  fxLayoutAlign="center center">
+    <mat-card fxFlex="45" fxLayout="column" fxLayoutAlign=" stretch" class="matcard">
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxFlex="95">
+                <input class="inputboxsize" matInput placeholder="Take a note...">
+            </div>
             <div fxLayout="row" fxLayoutAlign="start center">
-                <div fxFlex="95" >
-                        <input  class="inputboxsize" matInput placeholder="Take a note...">
+                <div>
+                    <button mat-icon-button>
+                        <mat-icon matTooltip="New List">
+                            <img class="img2" src="assets\Picture\Symbols\checkbox_with_tick.png" />
+                        </mat-icon>
+                    </button>
                 </div>
-                <div fxLayout="row" fxLayoutAlign="start center">
-                    <div>
-                        <button mat-icon-button>
-                            <mat-icon matTooltip="New List">
-                                <img class="img2" src="assets\Picture\Symbols\checkbox_with_tick.png" />
-                            </mat-icon>
-                        </button>
-                    </div>
-                    <div>
-                        <button mat-icon-button>
-                            <mat-icon matTooltip="New note with drawing"><img class="img2"
-                                    src="assets\Picture\Symbols\brush.png" />
-                            </mat-icon>
-                        </button>
-                    </div>
-                    <div>
-                        <button mat-icon-button>
-                            <mat-icon matTooltip="New note with image"><img class="img2"
-                                    src="assets\Picture\Symbols\image.png" />
-                            </mat-icon>
-                        </button>
-                    </div>
+                <div>
+                    <button mat-icon-button>
+                        <mat-icon matTooltip="New note with drawing"><img class="img2"
+                                src="assets\Picture\Symbols\brush.png" />
+                        </mat-icon>
+                    </button>
+                </div>
+                <div>
+                    <button mat-icon-button>
+                        <mat-icon matTooltip="New note with image"><img class="img2"
+                                src="assets\Picture\Symbols\image.png" />
+                        </mat-icon>
+                    </button>
                 </div>
             </div>
-        </mat-card>
-    </div>
+        </div>
+    </mat-card>
+</div>
 
-    <!-- ############ Add A New Note ############# -->
+<!-- ############ Add A New Note ############# -->
+<form [formGroup]="addnoteform" (ngSubmit)="addnote()" (ngSubmit)="display()" >
 
 
     <div *ngIf="hide==true" fxLayoutAlign="center center">
-        <mat-card fxFlex="45" fxLayout="column" fxLayoutAlign=" stretch" class="matcard" >
+        <mat-card fxFlex="45" fxLayout="column" fxLayoutAlign=" stretch" class="matcard" fxFlex.xs="100" fxFlex.sm="50">
 
 
 
@@ -67,12 +67,12 @@
 
 
 
-            <div fxLayout="row">
-                <div fxFlex="90">
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div fxFlex="50">
                     <app-icons></app-icons>
                 </div>
                 <div>
-                    <button type="submit" mat-button>Close</button>
+                    <button  type="submit"  mat-button>Close</button>
                 </div>
             </div>
         </mat-card>

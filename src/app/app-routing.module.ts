@@ -5,8 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { MixNotesComponentComponent } from './components/mix-notes-component/mix-notes-component.component';
-import { CreateNoteComponent } from './components/create-note/create-note.component';
+import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -19,7 +18,7 @@ const routes: Routes = [
   {
     path: 'dashboard', component: DashboardComponent,
     children:[
-      { path: 'notes', component: MixNotesComponentComponent }
+      { path: 'notes', component: DisplayNotesComponent }
     ]
   },
 ];

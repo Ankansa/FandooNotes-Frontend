@@ -28,9 +28,9 @@ import { ForgetPasswordComponent } from './components/forget-password/forget-pas
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CreateNoteComponent } from './components/create-note/create-note.component';
-import { DisplayOfNotesComponent } from './components/display-of-notes/display-of-notes.component';
-import { MixNotesComponentComponent } from './components/mix-notes-component/mix-notes-component.component';
 import { IconsComponent } from './components/icons/icons.component';
+import { GetAllNoteComponent } from './components/get-all-note/get-all-note.component';
+import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 
 
 
@@ -44,9 +44,9 @@ import { IconsComponent } from './components/icons/icons.component';
     ResetPasswordComponent,
     DashboardComponent,
     CreateNoteComponent,
-    DisplayOfNotesComponent,
-    MixNotesComponentComponent,
-    IconsComponent
+    IconsComponent,
+    GetAllNoteComponent,
+    DisplayNotesComponent
 
     
     

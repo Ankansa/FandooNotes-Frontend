@@ -25,4 +25,17 @@ export class NoteService {
     return this.httpservice.postService('note', data, true, httpOptions)
 
   }
+
+  getAllNote() {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': "bearer " + this.token,
+      })
+    }
+    // console.log("Data in User services : ", data);
+    return this.httpservice.getService('note', true, httpOptions)
+
+  }
+
 }

@@ -23,10 +23,10 @@ export class LoginComponent implements OnInit {
   login() {
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
-      this.userService.login(this.loginForm.value).subscribe((data:any) => {
-        console.log("Data after subscribe",data);
+      this.userService.login(this.loginForm.value).subscribe((responce:any) => {
+        console.log("Data after subscribe",responce);
 
-        localStorage.setItem('token', data.data)
+        localStorage.setItem('token', responce.data)
 
       }, (error: any) => {
         console.log(error);
