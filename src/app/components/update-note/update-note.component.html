@@ -1,0 +1,32 @@
+<form [formGroup]="updatenoteform" (ngSubmit)="update()"  (ngSubmit)="onNoClick()">
+    <div class="notediv">
+
+        <div fxFlex="90" class="note">
+            <p>
+                <input class="inputboxsize" matInput placeholder="Title..." 
+                    formControlName="Title">
+            </p>
+            <br><br>
+            <p>
+                <input class="inputboxsize" matInput placeholder="Descreption..." 
+                    formControlName="Descreption">
+            </p>
+        </div>
+
+        <div fxFlex="10">
+            <button mat-icon-button>
+                <mat-icon matTooltip="New note with image"><img class="img2" src="assets\Picture\Symbols\pin.png" />
+                </mat-icon>
+            </button>
+        </div>
+
+    </div>
+    <div fxLayout="row">
+        <div fxFlex="80" fxFlex.xs="80">
+            <app-icons></app-icons>
+        </div>
+        <div fxFlex="20" fxFlex.xs="20">
+            <button type="submit" mat-button>Close</button>
+        </div>
+    </div>
+</form>

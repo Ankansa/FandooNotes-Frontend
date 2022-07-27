@@ -32,6 +32,7 @@
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
     flex: 1;
+    // border: solid yellow;
   }
   
   .example-is-mobile .example-sidenav-container {
@@ -73,3 +74,31 @@
 .sec_top_icon{
   width: 30%;
 }
+
+
+.sideview{
+  border: solid red;
+  
+}
+
+
+
+
+.hover:hover {
+  background: #dce0a3;
+  color: rgb(0, 0, 0);
+  border-bottom-right-radius: 20%;
+  border-top-right-radius: 20%;
+  padding: 10px;
+  }
+
+
+
+
+.sidebar-item {
+  margin-left: 18px;
+  margin-right: 18px;
+  display: flex;
+  align-items: center;
+}
+

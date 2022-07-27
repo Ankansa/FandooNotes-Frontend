@@ -1,6 +1,6 @@
-<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" >
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
 
-    <mat-toolbar class="example-toolbar" >
+    <mat-toolbar class="example-toolbar">
 
         <button mat-icon-button (click)="snav.toggle()">
             <mat-icon>menu</mat-icon>
@@ -52,25 +52,29 @@
     <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
 
         <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
-            fixedTopGap="56">
+            fixedTopGap="56 ">
             <mat-list>
-                <div>
+                <div class="hover sidebar-item" fxLayoutGap="30px">
                     <img src="assets\Picture\Symbols\note.png">
-                    <span>Notes</span>
+                    <span >Notes</span>
                 </div>
-                <div>
-                    <img src="assets\Picture\Symbols\reminder.png">
+                <br>
+                <div class="hover sidebar-item" fxLayoutGap="30px">
+                    <img  src="assets\Picture\Symbols\reminder.png">
                     <span>Reminder</span>
                 </div>
-                <div>
+                <br>
+                <div class="hover sidebar-item" fxLayoutGap="30px">
                     <img src="assets\Picture\Symbols\editlevels.png">
                     <span>Edit lebels</span>
                 </div>
-                <div>
+                <br>
+                <div class="hover sidebar-item" fxLayoutGap="30px">
                     <img src="assets\Picture\Symbols\archive.png">
                     <span>Archive</span>
                 </div>
-                <div>
+                <br>
+                <div class="hover sidebar-item" fxLayoutGap="30px">
                     <img src="assets\Picture\Symbols\Trash.png">
                     <span>Trash</span>
                 </div>

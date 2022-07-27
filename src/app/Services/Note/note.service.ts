@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { HttpService } from '../Http/http.service';
 
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -36,6 +38,29 @@ export class NoteService {
     // console.log("Data in User services : ", data);
     return this.httpservice.getService('note', true, httpOptions)
 
+  }
+
+  trashNote(id: any) {
+    // let url='movetrash/'
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': "bearer " + this.token,
+      })
+    }
+    // console.log("Data in User services : ", data);
+    return this.httpservice.putService("note/movetrash/" + id,null, true, httpOptions)
+
+  }
+
+  update(id:any,body:any){
+    let httpOptions= {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': "bearer " + this.token,
+      })
+    }
+    return this.httpservice.putService("note/"+id,body,true,httpOptions)
   }
 
 }

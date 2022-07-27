@@ -1,31 +1,51 @@
-<div class="iconsdiv" fxLayout="row" fxLayoutAlign="space-between center"  >
-  <button id="Remaind" matTooltip="Remind me" mat-icon-button>
+<div class="iconsdiv" fxLayout="row" fxLayoutAlign="space-between center">
+  <button  matTooltip="Remind me" mat-icon-button>
     <mat-icon>
-      <img id="img" class="imgicons" src="assets\Picture\iconlist\Alart.png" />
+      <img  class="imgicons" src="assets\Picture\iconlist\Alart.png" />
     </mat-icon>
   </button>
 
-  <button id="coll" mat-icon-button matTooltip="Collaborator">
+  <button mat-icon-button matTooltip="Collaborator">
     <mat-icon>
-      <img id="img" class="imgicons" src="assets\Picture\iconlist\add person.png" />
+      <img  class="imgicons" src="assets\Picture\iconlist\add person.png" />
     </mat-icon>
   </button>
 
-  <button id="col" mat-icon-button matTooltip="Change color">
-    <img id="img" class="imgicons" src="assets\Picture\iconlist\Colour.png" />
+  <button  mat-icon-button matTooltip="Change color">
+    <img class="imgicons" src="assets\Picture\iconlist\Colour.png" />
   </button>
 
   <button mat-icon-button matTooltip="Add image">
-    <img id="img" class="imgicons" src="assets\Picture\iconlist\Picture.png" />
+    <img  class="imgicons" src="assets\Picture\iconlist\Picture.png" />
   </button>
 
 
-  <button id="arc" mat-icon-button matTooltip="Archive">
-    <img id="img" class="imgicons" src="assets\Picture\iconlist\Archive.png" />
+  <button  mat-icon-button matTooltip="Archive">
+    <img class="imgicons" src="assets\Picture\iconlist\Archive.png" />
   </button>
 
-  <button id="menu" mat-icon-button colour="basic" matTooltip="more">
-    <img id="img" class="imgicons" src="assets\Picture\iconlist\Three dot.png" />
+  <button  [matMenuTriggerFor]="menu" mat-icon-button colour="basic" matTooltip="more">
+    <img class="imgicons" src="assets\Picture\iconlist\Three dot.png" />
   </button>
+  <mat-menu #menu="matMenu">
+    <button (click)="moveTrash()" mat-menu-item>
+      <span>Delete</span>
+    </button>
+    <button mat-menu-item >
+      <span>Add Lebel</span>
+    </button>
+    <button mat-menu-item>
+      <span>Add Drawing</span>
+    </button>
+    <button mat-menu-item>
+      <span>Make a copy</span>
+    </button>
+    <button mat-menu-item>
+      <span>Show checkboxes</span>
+    </button>
+    <button mat-menu-item>
+      <span>Copy to Google Docs</span>
+    </button>
+  </mat-menu>
 
 </div>
