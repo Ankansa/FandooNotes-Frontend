@@ -1,31 +1,33 @@
-<div class="iconsdiv" fxLayout="row" fxLayoutAlign="space-between center">
-  <button  matTooltip="Remind me" mat-icon-button>
-    <mat-icon>
-      <img  class="imgicons" src="assets\Picture\iconlist\Alart.png" />
+<div class="iconsdiv" fxLayout="row" fxLayoutAlign="space-between center" >
+
+
+  <button class="buttonsize"  matTooltip="Remind me" mat-icon-button >
+    <mat-icon >
+      <img  src="assets\Picture\iconlist\Alart.png" />
     </mat-icon>
   </button>
 
-  <button mat-icon-button matTooltip="Collaborator">
+  <button class="buttonsize" mat-icon-button matTooltip="Collaborator">
     <mat-icon>
-      <img  class="imgicons" src="assets\Picture\iconlist\add person.png" />
+      <img  src="assets\Picture\iconlist\add person.png" />
     </mat-icon>
   </button>
 
-  <button  mat-icon-button matTooltip="Change color">
-    <img class="imgicons" src="assets\Picture\iconlist\Colour.png" />
+  <button class="buttonsize"  mat-icon-button matTooltip="Change color">
+    <img src="assets\Picture\iconlist\Colour.png" />
   </button>
 
-  <button mat-icon-button matTooltip="Add image">
-    <img  class="imgicons" src="assets\Picture\iconlist\Picture.png" />
+  <button class="buttonsize" mat-icon-button matTooltip="Add image">
+    <img src="assets\Picture\iconlist\Picture.png" />
   </button>
 
 
-  <button  mat-icon-button matTooltip="Archive">
-    <img class="imgicons" src="assets\Picture\iconlist\Archive.png" />
+  <button class="buttonsize" (click)="archive()"  mat-icon-button matTooltip="Archive">
+    <img class="buttonsize" src="assets\Picture\iconlist\Archive.png" />
   </button>
 
-  <button  [matMenuTriggerFor]="menu" mat-icon-button colour="basic" matTooltip="more">
-    <img class="imgicons" src="assets\Picture\iconlist\Three dot.png" />
+  <button class="buttonsize"  [matMenuTriggerFor]="menu" mat-icon-button colour="basic" matTooltip="more">
+    <img src="assets\Picture\iconlist\Three dot.png" />
   </button>
   <mat-menu #menu="matMenu">
     <button (click)="moveTrash()" mat-menu-item>

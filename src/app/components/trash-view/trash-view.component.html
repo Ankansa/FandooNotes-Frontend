@@ -1,10 +1,10 @@
 <div class="main" fxLayoutGap="2%" fxLayoutAlign="start">
-    <mat-card *ngFor="let content of usernote" class="matcard" fxLayout="column" fxFlex="20" fxFlex.xs="100"
+    <mat-card *ngFor="let content of filterArrayNote" class="matcard" fxLayout="column" fxFlex="20" fxFlex.xs="100"
         fxFlex.sm="40">
 
         <div class="notediv">
 
-            <div (click)="openDialog(content)" fxFlex="85" class="note">
+            <div fxFlex="85" class="note">
                 isarchive= {{content.isArchived}}
                 <br><br>
                 isdeleted = {{content.isDeleted}}

@@ -6,6 +6,8 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { RegistrationComponent } from './components/registration/registration.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
+import { ArchiveViewComponent } from './components/archive-view/archive-view.component';
+import { TrashViewComponent } from './components/trash-view/trash-view.component';
 
 
 
@@ -20,7 +22,9 @@ const routes: Routes = [
   {
     path: 'dashboard', component: DashboardComponent,
     children:[
-      { path: 'notes', component: DisplayNotesComponent }
+      { path: 'notes', component: DisplayNotesComponent },
+      {path:'archive', component:ArchiveViewComponent},
+      {path:'trash', component:TrashViewComponent}
     ]
   },
 ];

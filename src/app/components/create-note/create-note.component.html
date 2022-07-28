@@ -1,6 +1,6 @@
 <!-- 1st Box -->
 <br><br>
-<div *ngIf="hide==false" (click)="display()"  fxLayoutAlign="center center">
+<div *ngIf="hide==false" (click)="display()"   class="main">
     <mat-card fxFlex="45" fxLayout="column" fxLayoutAlign=" stretch" class="matcard" fxFlex.xs="100" fxFlex.sm="50">
         <div fxLayout="row" fxLayoutAlign="start center">
             <div fxFlex="95">
@@ -37,7 +37,7 @@
 <form [formGroup]="addnoteform" (ngSubmit)="addnote()" (ngSubmit)="display()" >
 
 
-    <div *ngIf="hide==true" fxLayoutAlign="center center">
+    <div *ngIf="hide==true" class="main">
         <mat-card fxFlex="45" fxLayout="column" fxLayoutAlign=" stretch" class="matcard" fxFlex.xs="100" fxFlex.sm="50">
 
 

@@ -77,20 +77,38 @@
 
 
 .sideview{
-  border: solid red;
+  // border: solid red;
   
 }
 
 
 
 
-.hover:hover {
-  background: #dce0a3;
-  color: rgb(0, 0, 0);
-  border-bottom-right-radius: 20%;
-  border-top-right-radius: 20%;
-  padding: 10px;
+
+
+  .click {
+    opacity: 0.6;
+    border-top-right-radius: 30vh;
+    border-bottom-right-radius: 30vh;
+    width: 240px;
+    height: 50px;
+    text-align: center;
+    padding-top: 6px;
+    display: inline-flex;
+    font-weight: bolder;
+    color: black 10px;
+    border: transparent;
+    background-color: white;
+  
   }
+
+  .click:focus {
+    background: #feefc3;
+    color: rgb(0, 0, 0);
+    border-bottom-right-radius: 30vh;
+    border-top-right-radius: 30vh;
+    padding: 10px;
+    }
 
 
 
@@ -102,3 +120,22 @@
   align-items: center;
 }
 
+.operation_area{
+  padding-left: 16%;
+  // border: solid red;
+}
+
+
+
+
+
+
+
+
+
+.PvRhvb-ibnC6b-V67aGc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: 20px;
+}

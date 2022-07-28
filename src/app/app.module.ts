@@ -36,6 +36,8 @@ import { IconsComponent } from './components/icons/icons.component';
 import { GetAllNoteComponent } from './components/get-all-note/get-all-note.component';
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
+import { ArchiveViewComponent } from './components/archive-view/archive-view.component';
+import { TrashViewComponent } from './components/trash-view/trash-view.component';
 
 
 
@@ -53,6 +55,8 @@ import { UpdateNoteComponent } from './components/update-note/update-note.compon
     GetAllNoteComponent,
     DisplayNotesComponent,
     UpdateNoteComponent,
+    ArchiveViewComponent,
+    TrashViewComponent,
 
     
     

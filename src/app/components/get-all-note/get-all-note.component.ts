@@ -11,7 +11,9 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 })
 export class GetAllNoteComponent implements OnInit {
 
-  usernote: any;
+  usernote = new Array(); 
+
+for(){}
 
   constructor(private noteService: NoteService, private dialog: MatDialog) { }
 
@@ -23,7 +25,13 @@ export class GetAllNoteComponent implements OnInit {
   allnote() {
     this.noteService.getAllNote().subscribe((items: any) => {
       console.log("User all notes are : ", items);
-      this.usernote = items.data
+      for (var i of items.data) {
+        if (i.isArchived == false && i.isDeleted == false) {
+          this.usernote.push(i)
+        }
+      }
+      console.log("The filterArrayNote is : ", this.usernote);
+
 
     }, (error: any) => {
       console.log(error);

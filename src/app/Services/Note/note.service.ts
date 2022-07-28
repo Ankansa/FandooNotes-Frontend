@@ -53,6 +53,9 @@ export class NoteService {
 
   }
 
+
+
+
   update(id:any,body:any){
     let httpOptions= {
       headers: new HttpHeaders({
@@ -61,6 +64,22 @@ export class NoteService {
       })
     }
     return this.httpservice.putService("note/"+id,body,true,httpOptions)
+  }
+
+
+
+
+  archivenote(id: any) {
+    // let url='movetrash/'
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': "bearer " + this.token,
+      })
+    }
+    // console.log("Data in User services : ", data);
+    return this.httpservice.putService("note/archive/" + id,null, true, httpOptions)
+
   }
 
 }

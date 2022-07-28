@@ -2,7 +2,6 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NoteService } from 'src/app/Services/Note/note.service';
-import { UserService } from 'src/app/Services/User/user-service.service';
 import { GetAllNoteComponent } from '../get-all-note/get-all-note.component';
 
 @Component({

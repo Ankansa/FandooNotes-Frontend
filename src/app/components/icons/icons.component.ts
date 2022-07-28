@@ -9,26 +9,38 @@ import { NoteService } from 'src/app/Services/Note/note.service';
 })
 export class IconsComponent implements OnInit {
 
-  constructor(private noteService:NoteService) { }
+  constructor(private noteService: NoteService) { }
 
   ngOnInit(): void {
   }
 
-@Input()childNoteID:any
+  @Input() childNoteID: any         // Recive the data from get all note
 
-moveTrash(){
-  let id={
-cardId:[this.childNoteID],
+  moveTrash() {
 
-// isDeleted:true,
+
+    console.log("From icons.compund.ts ......this.childNoteID :- ", this.childNoteID)
+    this.noteService.trashNote(this.childNoteID).subscribe((responce: any) => {
+      console.log(responce)
+
+    }, error => {
+      console.log(error)
+    })
   }
 
-  console.log("From icons.compund.ts ......this.childNoteID :- ",this.childNoteID)
-  this.noteService.trashNote(this.childNoteID).subscribe((responce:any)=>{
-    console.log(responce)
-  
-},error=>{
-  console.log(error)
-})
-}
+
+
+
+
+  archive() {
+
+    console.log("From icons.compund.ts ......this.childNoteID :- ", this.childNoteID)
+    this.noteService.archivenote(this.childNoteID).subscribe((responce: any) => {
+      console.log(responce)
+
+    }, error => {
+      console.log(error)
+    })
+
+  }
 }
