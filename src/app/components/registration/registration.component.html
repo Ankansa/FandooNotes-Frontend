@@ -28,7 +28,7 @@
 
 
         <div id="Username" class="user_name">
-          <mat-form-field appearance="outline" class="user_box" style="border: 1px solid red;">
+          <mat-form-field appearance="outline" class="user_box">
             <mat-label class="boxtext">E-Mail</mat-label>
             <input matInput placeholder class="boxtext" formControlName="mailid">
             <mat-error class="errorfont">Please choose mail id</mat-error>
@@ -50,7 +50,7 @@
 
           <mat-form-field appearance="outline" class="last_name">
             <mat-label class="boxtext">Confirm</mat-label>
-            <input matInput [type]="input" placeholder class="boxtext" >
+            <input matInput [type]="input" placeholder class="boxtext">
             <mat-error class="errorfont">Confirm your password</mat-error>
           </mat-form-field>
           <mat-hint>Use 6 or more characters with a mix of letters, numbers & symbols</mat-hint>
@@ -65,10 +65,12 @@
 
 
 
-        <div class="name">
+        <!-- <div class="name"> -->
+        <div fxLayout="row" fxLayoutAlign="space-between center">
 
-          <a mat-button color="primary" href="http://localhost:4200/login">Sign in instead</a>
-          <button type="submit" mat-raised-button color="primary" class="last">Next</button>
+          <a mat-button color="primary" routerLink="/login">Sign in instead</a>
+
+          <button type="submit" mat-raised-button color="primary" class="last" >Next</button>
 
         </div>
 

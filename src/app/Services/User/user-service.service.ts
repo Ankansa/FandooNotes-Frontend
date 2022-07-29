@@ -18,6 +18,7 @@ export class UserService {
       })
     }
     console.log("Data in User services : ", data);
+  
     return this.httpservice.postService('users', data, false, httpOptions)
   }
 
@@ -32,18 +33,26 @@ export class UserService {
     console.log("Data in User services : ", data);
     return this.httpservice.postService('users/login', data, false, httpOptions)
   }
-  
 
 
-  forget(data:any){
+
+  forget(data: any) {
     let httpOptions = {
-      httpOptions : new HttpHeaders({
-        'content-type' : 'application/json',
+      httpOptions: new HttpHeaders({
+        'content-type': 'application/json',
       })
     }
     console.log("Data in User services : ", data);
-    return this.httpservice.postService('users/forgetPass',data,false,httpOptions)
+    return this.httpservice.postService('users/forgetPass', data, false, httpOptions)
   }
 
-
+  reset(newpss:any,resetToken:any) {
+    let httpOptions = {
+      httpOptions: new HttpHeaders({
+        'content-type': 'application/json',
+      })
+    }
+    console.log("Data in User services : ", resetToken);
+    return this.httpservice.postService('users/'+resetToken, newpss, false, httpOptions)
+  }
 }

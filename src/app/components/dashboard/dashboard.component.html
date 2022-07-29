@@ -43,7 +43,14 @@
             </div>
             <div div fxLayout="row" fxLayoutAlign="space-around center" class="sec_top_icon">
                 <img class="icon" src="assets\Picture\Symbols\apps.png">
-                <img class="icon" src="assets\Picture\Symbols\profile.png">
+                <button mat-button>
+                    <img mat-button [matMenuTriggerFor]="menu" class="icon" src="assets\Picture\Symbols\profile.png">
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Setting</button>
+                    <button mat-menu-item (click)="logOut()" routerLink="/login">Log Out</button>
+                </mat-menu>
+
             </div>
         </div>
 
@@ -54,18 +61,18 @@
         <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
             fixedTopGap="56 ">
             <mat-list>
-                
+
                 <div class="click sidebar-item" fxLayoutGap="30px" routerLink="/dashboard/notes">
                     <img src="assets\Picture\Symbols\note.png">
-                    <span >Notes</span>
+                    <span>Notes</span>
                 </div>
 
                 <div class="click sidebar-item" fxLayoutGap="30px">
-                    <img  src="assets\Picture\Symbols\reminder.png">
+                    <img src="assets\Picture\Symbols\reminder.png">
                     <span>Reminder</span>
                 </div>
 
-                <div class="click sidebar-item" fxLayoutGap="30px" >
+                <div class="click sidebar-item" fxLayoutGap="30px">
                     <img src="assets\Picture\Symbols\editlevels.png">
                     <span>Edit lebels</span>
                 </div>
@@ -74,7 +81,7 @@
                     <img src="assets\Picture\Symbols\archive.png">
                     <span>Archive</span>
                 </div>
-                
+
                 <div class="click sidebar-item" fxLayoutGap="30px" routerLink="/dashboard/trash">
                     <img src="assets\Picture\Symbols\Trash.png">
                     <span>Trash</span>
@@ -83,7 +90,7 @@
         </mat-sidenav>
 
         <mat-sidenav-content class="operation_area">
-            <router-outlet ></router-outlet>
+            <router-outlet></router-outlet>
             <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
         </mat-sidenav-content>
     </mat-sidenav-container>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/Services/User/user-service.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 
 @Component({
@@ -13,40 +15,50 @@ export class RegistrationComponent implements OnInit {
   submitted = false;
   input = "password";
 
-  constructor(private formBuilder: FormBuilder, private userService:UserService) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserService, private snakbar: MatSnackBar) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.registrationFrom = this.formBuilder.group({
       First_name: ['', Validators.required],
       Second_name: ['', Validators.required],
       mailid: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-  });
+    });
 
-}
-
-registration(){
-  if(this.registrationFrom.valid){
-  console.log(this.registrationFrom.value);
-  this.userService.registration(this.registrationFrom.value).subscribe((data)=>{
-    console.log(data);
-    
-  },(error : any)=> {
-    console.log(error);
-  })
   }
 
-}
+  registration() {
+    if (this.registrationFrom.valid) {
+      console.log(this.registrationFrom.value);
 
-showpassword(checker:any)
-{
-  if(checker.checked){
-    this.input="text";
+
+
+      this.userService.registration(this.registrationFrom.value).subscribe((responce: any) => {
+        console.log("All responce is :", responce);
+
+        this.snakbar.open('Registration Sucessfull', 'Ok', {
+        });
+
+
+      }, (error: any) => {
+        console.log("The error is: ", error);
+        this.snakbar.open(error.error.message, 'Ok', {
+        });
+      })
+    }
+
   }
-  else{
-    this.input="password"
+
+  showpassword(checker: any) {
+    if (checker.checked) {
+      this.input = "text";
+    }
+    else {
+      this.input = "password"
+    }
   }
-}
+
+
 
 
 }

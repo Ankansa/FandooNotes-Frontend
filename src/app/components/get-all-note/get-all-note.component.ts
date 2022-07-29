@@ -11,7 +11,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 })
 export class GetAllNoteComponent implements OnInit {
 
-  usernote = new Array(); 
+  usernote = new Array();  
 
 for(){}
 
