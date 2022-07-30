@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NoteService } from '../../Services/Note/note.service';
 import { UpdateNoteComponent } from '../update-note/update-note.component';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DataService } from 'src/app/Services/Data/data.service';
 
 
 @Component({
@@ -11,15 +12,18 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 })
 export class GetAllNoteComponent implements OnInit {
 
-  usernote = new Array();  
+  usernote = new Array();
 
-for(){}
+  searchString: any;
 
-  constructor(private noteService: NoteService, private dialog: MatDialog) { }
+
+  constructor(private noteService: NoteService, private dialog: MatDialog, private data: DataService) { }
 
   ngOnInit(): void {
     this.allnote()
+    this.data.currentMessage.subscribe(message => this.searchString = message)
   }
+ 
 
 
   allnote() {
@@ -39,8 +43,9 @@ for(){}
 
   }
 
+  
 
-// For Update Note data sharing ####################
+  // For Update Note data sharing ####################
 
   openDialog(item: any): void {
     const dialogRef = this.dialog.open(UpdateNoteComponent, {

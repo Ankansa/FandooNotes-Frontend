@@ -8,7 +8,6 @@
         <div>
             <div fxFlex="10" fxLayout="row" fxFlex.gt="500px" matTooltip="Welcome to Fundoo Notes">
                 <img src="assets\Picture\Notelogo.png">
-
                 <h3 class="example-app-name" fxLayoutAlign="center center">
                     <mat-card-title class="fundoo" fxLayout="row" fxLayoutAlign="end center">
                         <span id="title">Fundoo</span>
@@ -23,8 +22,8 @@
                     <mat-icon id="search" matTooltip="Search">search</mat-icon>
                 </button>
 
-                <input fxFlex="50" matInput placeholder="Search" [style.fontSize.px]="16" class="search-window"
-                    autocomplete="off" type="text" />
+                <input [(ngModel)]="message" (keyup)="newMessage()" fxFlex="50" matInput placeholder="Search"
+                    [style.fontSize.px]="16" class="search-window" autocomplete="off" type="text" />
 
 
             </mat-form-field>

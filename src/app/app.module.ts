@@ -40,6 +40,7 @@ import { DisplayNotesComponent } from './components/display-notes/display-notes.
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
 import { ArchiveViewComponent } from './components/archive-view/archive-view.component';
 import { TrashViewComponent } from './components/trash-view/trash-view.component';
+import { FilterpipePipe } from './pipe/filterpipe.pipe';
 
 
 
@@ -59,6 +60,7 @@ import { TrashViewComponent } from './components/trash-view/trash-view.component
     UpdateNoteComponent,
     ArchiveViewComponent,
     TrashViewComponent,
+    FilterpipePipe,
 
     
     
