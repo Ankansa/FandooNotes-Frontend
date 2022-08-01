@@ -82,4 +82,64 @@ export class NoteService {
 
   }
 
+
+
+  unarchivenote(id: any) {
+    // let url='movetrash/'
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': "bearer " + this.token,
+      })
+    }
+    // console.log("Data in User services : ", data);
+    return this.httpservice.putService("note/unarchive/" + id,null, true, httpOptions)
+
+  }
+
+
+  deleteNote(id: any) {
+    // let url='movetrash/'
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': "bearer " + this.token,
+      })
+    }
+    // console.log("Data in User services : ", data);
+    return this.httpservice.deleteservice("note/" + id, true, httpOptions)
+
+  }
+
+
+  restoreTrash(id: any) {
+    // let url='movetrash/'
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': "bearer " + this.token,
+      })
+    }
+    // console.log("Data in User services : ", data);
+    return this.httpservice.putService("note/removetrash/" + id,null, true, httpOptions)
+
+  }
+
+
+
+
+  changeColor(id: any,colorCode:any) {
+    // let url='movetrash/'
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': "bearer " + this.token,
+      })
+    }
+    // console.log("Data in User services : ", data);
+    return this.httpservice.putService("note/colour/" + id,colorCode, true, httpOptions)
+
+  }
+
+
 }

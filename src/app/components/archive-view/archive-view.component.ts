@@ -15,11 +15,11 @@ export class ArchiveViewComponent implements OnInit {
   constructor(private noteService: NoteService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.allnote()
+    this.archivenotes()
   }
 
 
-  allnote() {
+  archivenotes() {
     this.noteService.getAllNote().subscribe((items: any) => {
       console.log("User all notes are : ", items);
       for (var i of items.data) {

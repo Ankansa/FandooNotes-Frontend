@@ -1,27 +1,22 @@
 <div class="main" fxLayoutGap="2%" fxLayoutAlign="start">
     <mat-card *ngFor="let content of filterArrayNote" class="matcard" fxLayout="column" fxFlex="20" fxFlex.xs="100"
-        fxFlex.sm="40">
+        fxFlex.sm="40" [ngStyle]="{ 'background-color': content.color }">
 
         <div class="notediv">
 
             <div (click)="openDialog(content)" fxFlex="85" class="note">
-                isarchive= {{content.isArchived}}
-                <br><br>
-                isdeleted = {{content.isDeleted}}
-                <br><br>
+                
                 {{content.Title}}
 
                 <br><br>
 
                 {{content.Descreption}}
 
-                id= {{content._id}}
-
             </div>
 
             <div fxFlex="15">
                 <button mat-icon-button>
-                    <mat-icon matTooltip="New note with image"><img class="img2" src="assets\Picture\Symbols\pin.png" />
+                    <mat-icon matTooltip="Pin note"><img class="img2" src="assets\Picture\Symbols\pin.png" />
                     </mat-icon>
                 </button>
             </div>
@@ -29,7 +24,7 @@
         </div>
 
         <div>
-            <app-icons [childNoteID]="content._id"></app-icons>
+            <app-icons [childNoteID]="content._id" [archiveStatus]="content.isArchived"></app-icons>
         </div>
     </mat-card>
 </div>

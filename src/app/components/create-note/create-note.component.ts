@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteService } from 'src/app/Services/Note/note.service';
 @Component({
   selector: 'app-create-note',
@@ -12,7 +13,7 @@ export class CreateNoteComponent implements OnInit {
 
   hide = false;
 
-  constructor(private formBuilder: FormBuilder, private noteService: NoteService) { }
+  constructor(private formBuilder: FormBuilder, private noteService: NoteService, private snakber:MatSnackBar) { }
 
 
   ngOnInit() {
@@ -43,6 +44,7 @@ export class CreateNoteComponent implements OnInit {
       }
       this.noteService.addnote(requestData).subscribe((data) => {
         console.log(data);
+        this.snakber.open("Note added successfully","Ok",{duration:4000})
 
       }, (error: any) => {
         console.log(error);

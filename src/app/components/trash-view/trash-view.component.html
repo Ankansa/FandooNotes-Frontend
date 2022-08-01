@@ -1,35 +1,46 @@
 <div class="main" fxLayoutGap="2%" fxLayoutAlign="start">
-    <mat-card *ngFor="let content of filterArrayNote" class="matcard" fxLayout="column" fxFlex="20" fxFlex.xs="100"
-        fxFlex.sm="40">
+    <mat-card *ngFor="let content of filterArrayNote"  class="matcard" fxLayout="column" fxFlex="20" fxFlex.xs="100"
+        fxFlex.sm="40" [ngStyle]="{ 'background-color': content.color }">
 
-        <div class="notediv">
+        <div (click)="openDialog()" class="notediv" >
 
             <div fxFlex="85" class="note">
-                isarchive= {{content.isArchived}}
-                <br><br>
-                isdeleted = {{content.isDeleted}}
-                <br><br>
+               
                 {{content.Title}}
 
                 <br><br>
 
                 {{content.Descreption}}
 
-                id= {{content._id}}
 
             </div>
 
             <div fxFlex="15">
                 <button mat-icon-button>
-                    <mat-icon matTooltip="New note with image"><img class="img2" src="assets\Picture\Symbols\pin.png" />
+                    <mat-icon matTooltip="Pin note"><img class="img2" src="assets\Picture\Symbols\pin.png" />
                     </mat-icon>
                 </button>
             </div>
 
         </div>
 
-        <div>
-            <app-icons [childNoteID]="content._id"></app-icons>
+        <div  fxLayout="row" fxLayoutAlign="start">
+
+
+            <button (click)="delete(content._id)" matTooltip="Delete forever" mat-icon-button>
+                <mat-icon>
+                    <img class="icon" src="assets\Picture\iconlist\delete_forever.png" />
+                </mat-icon>
+            </button>
+
+
+            <button (click)="restore(content._id)" matTooltip="Restore from trash" mat-icon-button>
+                <mat-icon>
+                    <img class="icon" src="assets\Picture\iconlist\restore_from_trash.png" />
+                </mat-icon>
+            </button>
+
+
         </div>
     </mat-card>
 </div>
