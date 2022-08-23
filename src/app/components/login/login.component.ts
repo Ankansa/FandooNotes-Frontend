@@ -23,12 +23,10 @@ export class LoginComponent implements OnInit {
   login() {
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
-      this.userService.login(this.loginForm.value).subscribe((data) => {
-        console.log(data);
+      this.userService.login(this.loginForm.value).subscribe((responce:any) => {
+        console.log("Data after subscribe",responce);
 
-        const datastr=JSON.stringify(data)
-        console.log(datastr);
-        localStorage.setItem('jwtToken',datastr)
+        localStorage.setItem('token', responce.data)
 
       }, (error: any) => {
         console.log(error);
