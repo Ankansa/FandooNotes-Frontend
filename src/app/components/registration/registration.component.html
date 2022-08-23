@@ -8,74 +8,74 @@
 
 
       <form [formGroup]="registrationFrom" (ngSubmit)="registration()">
-      <div id="Name" class="name">
+        <div id="Name" class="name" fxLayout="row" fxLayout.xs="column">
 
-        <mat-form-field appearance="outline" class="first_name">
-          <mat-label class="boxtext">First name</mat-label>
-          <input matInput placeholder class="boxtext" formControlName="firstName">
-          <mat-error class="errorfont">Please enter name</mat-error>
-        </mat-form-field>
+          <mat-form-field appearance="outline" class="first_name">
+            <mat-label class="boxtext">First name</mat-label>
+            <input matInput placeholder class="boxtext" formControlName="First_name">
+            <mat-error class="errorfont">Please enter name</mat-error>
+          </mat-form-field>
 
-        <mat-form-field appearance="outline" class="last_name">
-          <mat-label class="boxtext">Last name</mat-label>
-          <input matInput placeholder class="boxtext" formControlName="lastName">
-          <mat-error class="errorfont">Please enter last name</mat-error>
+          <mat-form-field appearance="outline" class="last_name">
+            <mat-label class="boxtext">Last name</mat-label>
+            <input matInput placeholder class="boxtext" formControlName="Second_name">
+            <mat-error class="errorfont">Please enter last name</mat-error>
 
-        </mat-form-field>
+          </mat-form-field>
 
-      </div>
-
-
-
-      <div id="Username" class="user_name">
-        <mat-form-field appearance="outline" class="user_box">
-          <mat-label class="boxtext">E-Mail</mat-label>
-          <input matInput placeholder class="boxtext" formControlName="email">
-          <mat-error class="errorfont">Please choose mail id</mat-error>
-          <mat-hint class="text">You can use letters, numbers & periods</mat-hint>
-        </mat-form-field>
-      </div>
+        </div>
 
 
 
-
-      <div id="Password_Main">
-
-        <mat-form-field appearance="outline" class="first_name">
-          <mat-label class="boxtext">Password</mat-label>
-          <input matInput type="password" placeholder class="boxtext" formControlName="password">
-          <mat-error class="errorfont">Please enter password</mat-error>
-          <mat-hint></mat-hint>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline" class="last_name">
-          <mat-label class="boxtext">Confirm</mat-label>
-          <input matInput type="password" placeholder class="boxtext" formControlName="confirmPassword">
-          <mat-error class="errorfont">Confirm your password</mat-error>
-        </mat-form-field>
-        <mat-hint>Use 6 or more characters with a mix of letters, numbers & symbols</mat-hint>
-
-      </div>
+        <div id="Username" class="user_name">
+          <mat-form-field appearance="outline" class="user_box">
+            <mat-label class="boxtext">E-Mail</mat-label>
+            <input matInput placeholder class="boxtext" formControlName="mailid">
+            <mat-error class="errorfont">Please choose mail id</mat-error>
+            <mat-hint class="text">You can use letters, numbers & periods</mat-hint>
+          </mat-form-field>
+        </div>
 
 
 
-      <div id="Checkbox" class="checkbox">
-        <mat-checkbox class="boxtext">Show password</mat-checkbox>
-      </div>
+
+        <div id="Password_Main">
+
+          <mat-form-field appearance="outline" class="first_name">
+            <mat-label class="boxtext">Password</mat-label>
+            <input matInput [type]="input" placeholder class="boxtext" formControlName="password">
+            <mat-error class="errorfont">Please enter password</mat-error>
+            <mat-hint></mat-hint>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="last_name">
+            <mat-label class="boxtext">Confirm</mat-label>
+            <input matInput [type]="input" placeholder class="boxtext" >
+            <mat-error class="errorfont">Confirm your password</mat-error>
+          </mat-form-field>
+          <mat-hint>Use 6 or more characters with a mix of letters, numbers & symbols</mat-hint>
+
+        </div>
 
 
 
-      <div class="name">
+        <div id="Checkbox" class="checkbox">
+          <mat-checkbox (change)="showpassword($event)" class="boxtext">Show password</mat-checkbox>
+        </div>
 
-        <button mat-button color="primary">Sign in instead</button>
-        <button type="submit" mat-raised-button color="primary" class="last">Next</button>
 
-      </div>
+
+        <div class="name">
+
+          <a mat-button color="primary" href="http://localhost:4200/login">Sign in instead</a>
+          <button type="submit" mat-raised-button color="primary" class="last">Next</button>
+
+        </div>
 
       </form>
 
     </div>
-    <div id="Right_Block" class="Right_Block">
+    <div id="Right_Block" class="Right_Block" fxHide.xs>
       <img src="assets\Picture\picture.jpg" alt="Shild Image" class="Image">
       <h1 class="h1">One account. All of Fandoo working for you.</h1>
     </div>
