@@ -1,115 +1,121 @@
 .Main {
-  width: 55.4%;
-  min-height: auto;
-  margin-left: 22%;
-  margin-top: 2%;
-  border-radius: 1%;
-  box-shadow: 0 8px 16px;
-  // border: 2px solid rgb(196, 185, 185);
-}
+    width: 55.4%;
+    min-height: auto;
+    margin-left: 22%;
+    margin-top: 2%;
+    border-radius: 1%;
+    box-shadow: 0 8px 16px;
+    // border: 2px solid rgb(196, 185, 185);
+  }
+  
+  
+  .logo {
+    width: 12%;
+    margin-left: 5%;
+    margin-top: 6.5%;
+    margin-bottom: 2.5%;
+    // border: 2px solid rgb(43, 241, 36);
+  }
+  
+  
+  .para {
+    margin-left: 5%;
+    font-size: x-large;
+    // border: 2px solid rgb(205, 226, 17);
+  
+  }
+  
+  
+  .Main_Block {
+    display: flex;
+    // border: 2px solid rgb(255, 251, 0);
+  
+  }
+  
+  
+  .left_Block {
+    width: 50%;
+    margin-left: 3%;
+    // display: flex;
+    // border: 2px solid crimson;
+  
+  }
+  
+  
+  .Right_Block {
+    width: 50%;
+    word-wrap: normal;
+    // text-align: center;
+    // border: 2px solid rgb(63, 255, 5);
+  }
+  
+  .name {
+    display: flex;
+    // border: 2px solid rgb(5, 22, 255);
+  
+  }
+  
+  .first_name {
+    font-size: x-small;
+    width: 49%;
+    height: 65px;
+    // border: 2px solid rgb(63, 255, 5);
+  
+  }
+  
+  .last_name {
+    font-size: x-small;
+    width: 49%;
+    margin-left: 2%;
+    height: 65px;
+    // border: 2px solid rgb(248, 5, 5);
+  
+  }
+  
+  .user_box {
+    font-size: x-small;
+    width: 100%;
+    // border: 2px solid rgb(5, 248, 78);
+  
+  }
+  
+  .boxtext {
+    font-size: medium;
+  }
+  
+  .text {
+    font-size: 3ch;
+  }
+  
+  .user_name {
+    margin-bottom: 10%;
+  }
+  
+  .last {
+    margin-left: 50%;
+  }
+  
+  .checkbox {
+    margin-bottom: 15%;
+  }
+  
+  
+  .Image {
+    height: 50%;
+    width: 70%;
+    margin-left: 17%;
+    // border: 2px solid rgb(5, 248, 78);
+  
+  }
+  
+  .h1 {
+    font-size: medium;
+    text-align: center;
+    padding: 0 15% 15% 15%;
+    // border: 2px solid rgb(5, 248, 78);
+  
+  }
 
-
-.logo {
-  width: 12%;
-  margin-left: 5%;
-  margin-top: 6.5%;
-  margin-bottom: 2.5%;
-  // border: 2px solid rgb(43, 241, 36);
-}
-
-
-.para {
-  margin-left: 5%;
-  font-size: x-large;
-  // border: 2px solid rgb(205, 226, 17);
-
-}
-
-
-.Main_Block {
-  display: flex;
-  // border: 2px solid rgb(255, 251, 0);
-
-}
-
-
-.left_Block {
-  width: 50%;
-  margin-left: 3%;
-  // display: flex;
-  // border: 2px solid crimson;
-
-}
-
-
-.Right_Block {
-  width: 50%;
-  word-wrap: normal;
-  // text-align: center;
-  // border: 2px solid rgb(63, 255, 5);
-}
-
-.name {
-  display: flex;
-  // border: 2px solid rgb(5, 22, 255);
-
-}
-
-.first_name {
-  font-size: x-small;
-  width: 49%;
-  // border: 2px solid rgb(63, 255, 5);
-
-}
-
-.last_name {
-  font-size: x-small;
-  width: 49%;
-  margin-left: 2%;
-  // border: 2px solid rgb(248, 5, 5);
-
-}
-
-.user_box {
-  font-size: x-small;
-  width: 100%;
-  // border: 2px solid rgb(5, 248, 78);
-
-}
-
-.boxtext {
-  font-size: medium;
-}
-
-.text {
-  font-size: 3ch;
-}
-
-.user_name {
-  margin-bottom: 10%;
-}
-
-.last {
-  margin-left: 50%;
-}
-
-.checkbox {
-  margin-bottom: 15%;
-}
-
-
-.Image {
-  height: 50%;
-  width: 70%;
-  margin-left: 17%;
-  // border: 2px solid rgb(5, 248, 78);
-
-}
-
-.h1 {
-  font-size: medium;
-  text-align: center;
-  padding: 0 15% 15% 15%;
-  // border: 2px solid rgb(5, 248, 78);
-
-}
+  .errorfont{
+    font-size:small;
+  }

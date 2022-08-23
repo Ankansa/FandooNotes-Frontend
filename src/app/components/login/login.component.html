@@ -5,10 +5,13 @@
             <mat-card-title class="title">Login</mat-card-title>
             <p>Use your Fundoo account</p>
         </div>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+
         <div class="mail">
             <mat-form-field appearance="outline" class="input_box">
                 <mat-label>Email</mat-label>
-                <input matInput placeholder>
+                <input matInput placeholder formControlName="email">
+                <mat-error>Enter valid Mail</mat-error>
             </mat-form-field>
         </div>
 
@@ -16,7 +19,9 @@
         <div class="Password">
             <mat-form-field appearance="outline" class="input_box">
                 <mat-label>Password</mat-label>
-                <input matInput placeholder>
+                <input matInput placeholder formControlName="password">
+                <mat-error>Enter valid password</mat-error>
+
             </mat-form-field>
         </div>
 
@@ -27,9 +32,9 @@
                 <button mat-button color="primary" href="www.google.com">Forget Password</button>
             </div>
             <div class="login">
-                <button mat-flat-button color="primary">Login</button>
+                <button type="submit" mat-flat-button color="primary">Login</button>
             </div>
         </div>
-
+        </form>
     </mat-card>
 </div>
