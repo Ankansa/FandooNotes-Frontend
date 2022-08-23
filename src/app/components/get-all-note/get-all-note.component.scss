@@ -1,19 +1,40 @@
 .matcard {
     box-shadow: 0 0 6px;
-    padding-left: 5%;
-    // border: 1px solid rgb(240, 15, 15);
-    // display:flex;
-    width: 100%;
+    margin-top: 2%;
+    // padding-left: 1%;
+    height:fit-content ;    
+    // width: 25%;
+    
   }
 
 
 .main{
-  // min-height: 100px;
-  padding: 2%;
-  width: 30%;
-  // border: 1px solid red;
+ display: flex; 
+ flex-wrap: wrap;
 }
 
 .wordwrap{
   word-wrap: break-word;
+}
+
+.note{
+  word-wrap: break-word;
+
+}
+
+.matcard{
+  width: 21%;
+  display: flex;
+  
+}
+
+.cards {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card {
+  width: 160px;
 }

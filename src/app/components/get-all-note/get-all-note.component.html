@@ -1,34 +1,31 @@
-<div fxLayout="row wrap">
-    <div *ngFor="let content of usernote" fxLayout="row" class="main" >
+<div class="main" fxLayoutGap="2%" fxLayoutAlign="start">
+    <mat-card *ngFor="let content of usernote" class="matcard" fxLayout="column" fxFlex="25" fxFlex.xs="100" fxFlex.sm="40" >
 
-        <mat-card fxFlex.xs="100" fxLayout="column" fxLayoutAlign="space-between stretch" class="matcard" >
+        <div class="notediv">
 
-            <div fxFlex.xs="100" fxLayout="row" fxLayoutAlign="space-between start" >
+            <div (click)="openDialog(content)" fxFlex="85"  class="note">
+                {{content.isDeleted}}
+                <br><br>
+                {{content.Title}}
 
-                <div fxFlex="80" fxFlex.xs="80" fxFlex.sm="80" class="wordwrap" >
-                    
-                        {{content.Title}}
-                    
-                    <br><br>
-                    
-                        {{content.Descreption}}
-                    
-                </div>
+                <br><br>
 
-                <div fxFlex="20" fxFlex.xs="20" fxFlex.sm="20" >
-                    <button mat-icon-button>
-                        <mat-icon matTooltip="New note with image"><img class="img2"
-                                src="assets\Picture\Symbols\pin.png" />
-                        </mat-icon>
-                    </button>
-                </div>
+                {{content.Descreption}}
+                {{content._id}}
 
             </div>
 
-            <div >
-                <app-icons  fxFlex="100" fxFlex.xs="100" fxFlex.sm="100"></app-icons>
+            <div fxFlex="15">
+                <button mat-icon-button>
+                    <mat-icon matTooltip="New note with image"><img class="img2" src="assets\Picture\Symbols\pin.png" />
+                    </mat-icon>
+                </button>
             </div>
 
-        </mat-card>
-    </div>
+        </div>
+
+        <div >
+            <app-icons [childNoteID]="content._id"></app-icons>
+        </div>
+    </mat-card>
 </div>

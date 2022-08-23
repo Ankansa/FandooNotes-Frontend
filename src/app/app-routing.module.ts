@@ -7,6 +7,8 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 
+
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'forgetpassword', component: ForgetPasswordComponent },

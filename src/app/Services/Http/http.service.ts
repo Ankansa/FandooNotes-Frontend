@@ -10,11 +10,15 @@ export class HttpService {
   constructor(private httpClient: HttpClient) { }
 
 
-  postService(url: string, data: any, token:boolean, httpOptions: any) {
+  postService(url: string, data: any, token: boolean, httpOptions: any) {
     return this.httpClient.post(this.BaseUrl + url, data, token && httpOptions)
   }
 
-  getService(url: string, token:boolean, httpOptions: any){
+  getService(url: string, token: boolean, httpOptions: any) {
     return this.httpClient.get(this.BaseUrl + url, token && httpOptions)
+  }
+
+  putService(url: string, body:any, token: boolean, httpOptions: any) {
+    return this.httpClient.put(this.BaseUrl + url, body, token && httpOptions)
   }
 }

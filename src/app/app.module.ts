@@ -18,6 +18,10 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list'; 
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatDialogModule} from '@angular/material/dialog';
+
+
 
 
 
@@ -31,6 +35,7 @@ import { CreateNoteComponent } from './components/create-note/create-note.compon
 import { IconsComponent } from './components/icons/icons.component';
 import { GetAllNoteComponent } from './components/get-all-note/get-all-note.component';
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
+import { UpdateNoteComponent } from './components/update-note/update-note.component';
 
 
 
@@ -46,7 +51,8 @@ import { DisplayNotesComponent } from './components/display-notes/display-notes.
     CreateNoteComponent,
     IconsComponent,
     GetAllNoteComponent,
-    DisplayNotesComponent
+    DisplayNotesComponent,
+    UpdateNoteComponent,
 
     
     
@@ -68,10 +74,13 @@ import { DisplayNotesComponent } from './components/display-notes/display-notes.
     MatIconModule,
     MatToolbarModule,
     MatListModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatMenuModule,
+    MatDialogModule
     
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
