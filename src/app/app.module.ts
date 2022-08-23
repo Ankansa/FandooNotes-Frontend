@@ -20,6 +20,8 @@ import { MatListModule } from '@angular/material/list';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 
 
@@ -36,6 +38,9 @@ import { IconsComponent } from './components/icons/icons.component';
 import { GetAllNoteComponent } from './components/get-all-note/get-all-note.component';
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
+import { ArchiveViewComponent } from './components/archive-view/archive-view.component';
+import { TrashViewComponent } from './components/trash-view/trash-view.component';
+import { FilterpipePipe } from './pipe/filterpipe.pipe';
 
 
 
@@ -53,6 +58,9 @@ import { UpdateNoteComponent } from './components/update-note/update-note.compon
     GetAllNoteComponent,
     DisplayNotesComponent,
     UpdateNoteComponent,
+    ArchiveViewComponent,
+    TrashViewComponent,
+    FilterpipePipe,
 
     
     
@@ -76,7 +84,8 @@ import { UpdateNoteComponent } from './components/update-note/update-note.compon
     MatListModule,
     MatTooltipModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
     
   ],
   providers: [

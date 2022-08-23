@@ -1,37 +1,64 @@
 <div class="iconsdiv" fxLayout="row" fxLayoutAlign="space-between center">
-  <button  matTooltip="Remind me" mat-icon-button>
+
+
+  <button class="buttonsize" matTooltip="Remind me" mat-icon-button>
     <mat-icon>
-      <img  class="imgicons" src="assets\Picture\iconlist\Alart.png" />
+      <img src="assets\Picture\iconlist\Alart.png" />
     </mat-icon>
   </button>
 
-  <button mat-icon-button matTooltip="Collaborator">
+
+
+
+  <button class="buttonsize" mat-icon-button matTooltip="Collaborator">
     <mat-icon>
-      <img  class="imgicons" src="assets\Picture\iconlist\add person.png" />
+      <img src="assets\Picture\iconlist\add person.png" />
     </mat-icon>
   </button>
 
-  <button  mat-icon-button matTooltip="Change color">
-    <img class="imgicons" src="assets\Picture\iconlist\Colour.png" />
+
+<!-- ####### Color ####### -->
+
+  <button class="buttonsize" [matMenuTriggerFor]="color" mat-icon-button matTooltip="Change color">
+    <img src="assets\Picture\iconlist\Colour.png" />
+  </button>
+  <mat-menu #color="matMenu" >
+        <div fxLayout="row" fxLayoutGap="15px" class="coloricon"  *ngFor="let colors of colorcode" >
+          <div *ngFor="let color of colors">
+            <button (click)="changeColor(color.color)" [ngStyle]="{ 'background-color': color.color }"mat-mini-fab></button>
+          </div>
+        </div>
+  </mat-menu>
+
+
+
+
+  <button class="buttonsize" mat-icon-button matTooltip="Add image">
+    <img src="assets\Picture\iconlist\Picture.png" />
   </button>
 
-  <button mat-icon-button matTooltip="Add image">
-    <img  class="imgicons" src="assets\Picture\iconlist\Picture.png" />
+
+<!-- ##### Archive ##### -->
+
+  <button  class="buttonsize"  (click)="archive()" mat-icon-button matTooltip="Archive">
+    <img class="buttonsize" src="assets\Picture\iconlist\Archive.png" />
   </button>
 
+  <!-- <button *ngIf="archiveStatus==true"  class="buttonsize"  (click)="unarchive()" (click)="archive()" mat-icon-button matTooltip="Archive">
+    <img class="buttonsize" src="assets\Picture\iconlist\unarchive.png" />
+  </button> -->
 
-  <button  mat-icon-button matTooltip="Archive">
-    <img class="imgicons" src="assets\Picture\iconlist\Archive.png" />
-  </button>
 
-  <button  [matMenuTriggerFor]="menu" mat-icon-button colour="basic" matTooltip="more">
-    <img class="imgicons" src="assets\Picture\iconlist\Three dot.png" />
+<!-- ####### More Menu ######## -->
+
+  <button class="buttonsize" [matMenuTriggerFor]="menu" mat-icon-button colour="basic" matTooltip="more">
+    <img src="assets\Picture\iconlist\Three dot.png" />
   </button>
   <mat-menu #menu="matMenu">
     <button (click)="moveTrash()" mat-menu-item>
       <span>Delete</span>
     </button>
-    <button mat-menu-item >
+    <button mat-menu-item>
       <span>Add Lebel</span>
     </button>
     <button mat-menu-item>

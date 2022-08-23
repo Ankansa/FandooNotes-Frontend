@@ -1,0 +1,36 @@
+.matcard {
+  box-shadow: 0 0 6px;
+  margin-top: 2%;
+  height: fit-content;
+  width: 21%;
+  display: flex;
+}
+
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.note {
+  word-wrap: break-word;
+}
+
+
+
+.cards {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.icon {
+  opacity: 0.7;
+}
+
+.icon:hover {
+  opacity: 1;
+}
