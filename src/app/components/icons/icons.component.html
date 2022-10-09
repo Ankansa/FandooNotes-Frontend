@@ -40,13 +40,13 @@
 
 <!-- ##### Archive ##### -->
 
-  <button  class="buttonsize"  (click)="archive()" mat-icon-button matTooltip="Archive">
+  <button *ngIf="archiveStatus==false"  class="buttonsize"  (click)="archive()" mat-icon-button matTooltip="Archive">
     <img class="buttonsize" src="assets\Picture\iconlist\Archive.png" />
   </button>
 
-  <!-- <button *ngIf="archiveStatus==true"  class="buttonsize"  (click)="unarchive()" (click)="archive()" mat-icon-button matTooltip="Archive">
+  <button *ngIf="archiveStatus==true"  class="buttonsize"  (click)="unarchive()"  mat-icon-button matTooltip="Unarchive">
     <img class="buttonsize" src="assets\Picture\iconlist\unarchive.png" />
-  </button> -->
+  </button>
 
 
 <!-- ####### More Menu ######## -->

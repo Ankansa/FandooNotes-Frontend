@@ -24,7 +24,7 @@ export class ArchiveViewComponent implements OnInit {
       console.log("User all notes are : ", items);
       for (var i of items.data) {
         if (i.isArchived == true && i.isDeleted == false) {
-          this.filterArrayNote.push(i)
+          this.filterArrayNote.unshift(i)
         }
       }
       console.log("The filterArrayNote is : ", this.filterArrayNote);

@@ -34,7 +34,7 @@
 </div>
 
 <!-- ############ Add A New Note ############# -->
-<form [formGroup]="addnoteform" (ngSubmit)="addnote()" (ngSubmit)="display()" >
+<form [formGroup]="addnoteform"   >
 
 
     <div *ngIf="hide==true" class="main">
@@ -44,7 +44,7 @@
 
 
 
-            <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxLayout="row" fxLayoutAlign="start center" (ngSubmit)="display()">
                 <div fxFlex="95">
                     <input class="inputboxsize" matInput placeholder="Title" formControlName="Title">
                 </div>
@@ -72,7 +72,7 @@
                     <app-icons></app-icons>
                 </div>
                 <div>
-                    <button  type="submit"  mat-button>Close</button>
+                    <button (click)="addnote()" (click)="display()"  mat-button>Close</button>
                 </div>
             </div>
         </mat-card>

@@ -17,14 +17,16 @@ export class UpdateNoteComponent implements OnInit {
   title: any;
   description: any;
   id: any;
-
+  color: any;
+  isArchive: any;
   constructor(
     public dialogRef: MatDialogRef<GetAllNoteComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any, private noteService: NoteService, private formBuilder: FormBuilder, private snakber:MatSnackBar
+    @Inject(MAT_DIALOG_DATA) public data: any, private noteService: NoteService, private formBuilder: FormBuilder, private snakber: MatSnackBar
   ) {
     this.title = data.Title;
     this.description = data.Descreption;
     this.id = data._id;
+    this.color = data.color;
 
 
   }
@@ -46,7 +48,7 @@ export class UpdateNoteComponent implements OnInit {
 
   }
 
-// API Intrigration ############
+  // API Intrigration ############
 
   update() {
     if (this.updatenoteform.valid) {
@@ -57,7 +59,7 @@ export class UpdateNoteComponent implements OnInit {
       }
       this.noteService.update(this.id, requestData).subscribe((responce) => {
         console.log(responce);
-        this.snakber.open("Note sucessfully updated", "Ok",{duration:4000})
+        this.snakber.open("Note sucessfully updated", "Ok", { duration: 4000 })
 
       }, (error: any) => {
         console.log(error);

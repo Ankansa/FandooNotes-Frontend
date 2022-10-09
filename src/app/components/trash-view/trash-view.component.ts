@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DataService } from 'src/app/Services/Data/data.service';
 import { NoteService } from 'src/app/Services/Note/note.service';
 
 @Component({
@@ -10,18 +11,18 @@ import { NoteService } from 'src/app/Services/Note/note.service';
 export class TrashViewComponent implements OnInit {
   filterArrayNote = new Array(); 
 
-  constructor(private noteService: NoteService, private snakber: MatSnackBar) { }
+  constructor(private noteService: NoteService, private snakber: MatSnackBar, private data: DataService) { }
 
   ngOnInit(): void {
     this.trashNote()
-  }
+}
 
   trashNote() {
     this.noteService.getAllNote().subscribe((items: any) => {
       console.log("User all notes are : ", items);
       for (var i of items.data) {
         if (i.isDeleted == true) {
-          this.filterArrayNote.push(i)
+          this.filterArrayNote.unshift(i)
         }
       }
       console.log("The filterArrayNote is : ", this.filterArrayNote);

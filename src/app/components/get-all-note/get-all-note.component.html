@@ -1,10 +1,10 @@
 <div class="main" fxLayoutGap="2%" fxLayoutAlign="start">
     <mat-card *ngFor="let content of usernote | filter:searchString" class="matcard" fxLayout="column" fxFlex="20"
         fxFlex.xs="100" fxFlex.sm="40" [ngStyle]="{ 'background-color': content.color }">
-        <div class="notediv" >
+        <div class="notediv">
 
             <div (click)="openDialog(content)" fxFlex="85" class="note">
-             
+
                 {{content.Title}}
 
                 <br><br>
@@ -26,7 +26,7 @@
         </div>
 
         <div>
-            <app-icons [childNoteID]="content._id"></app-icons>
+            <app-icons [childNoteID]="content._id" [archiveStatus]="content.isArchived"></app-icons>
         </div>
     </mat-card>
 </div>

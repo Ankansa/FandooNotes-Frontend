@@ -1,4 +1,4 @@
-<form [formGroup]="updatenoteform" (ngSubmit)="update()" >
+<form [formGroup]="updatenoteform"   [ngStyle]="{ 'background-color': color }">
     <div class="notediv"  >
 
         <div fxFlex="90" class="note">
@@ -21,10 +21,10 @@
     </div>
     <div fxLayout="row" fxLayoutAlign="space-between center" >
         <div fxFlex="80" fxFlex.xs="80" fxFlex.sm="15" >
-            <app-icons [childNoteID]="id"></app-icons>
+            <app-icons [childNoteID]="id" ></app-icons>
         </div>
         <div fxFlex="15" fxFlex.xs="15" fxFlex.sm="15">
-            <button  (click)="onNoClick()" type="submit" mat-button>Close</button>
+            <button  (click)="onNoClick()" (click)="update()" type="submit" mat-button>Close</button>
         </div>
     </div>
 </form>

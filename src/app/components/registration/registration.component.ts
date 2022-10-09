@@ -28,6 +28,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   registration() {
+    console.log("its workin")
     if (this.registrationFrom.valid) {
       console.log(this.registrationFrom.value);
 

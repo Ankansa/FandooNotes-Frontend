@@ -1,5 +1,6 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject, tap } from 'rxjs';
 import { HttpService } from '../Http/http.service';
 
 
@@ -16,6 +17,11 @@ export class NoteService {
     this.token = localStorage.getItem("token")
   }
 
+  private _refreshRequired=new Subject<void>()
+  get RefreshRequired(){
+    return this._refreshRequired;
+  }
+
   addnote(data: any) {
     let httpOptions = {
       headers: new HttpHeaders({
@@ -24,7 +30,11 @@ export class NoteService {
       })
     }
     console.log("Data in User services : ", data);
-    return this.httpservice.postService('note', data, true, httpOptions)
+    return this.httpservice.postService('note', data, true, httpOptions).pipe(
+      tap(()=>{
+        this.RefreshRequired.next();
+      })
+    )
 
   }
 

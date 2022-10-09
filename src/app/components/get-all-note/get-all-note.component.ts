@@ -21,9 +21,18 @@ export class GetAllNoteComponent implements OnInit {
 
   ngOnInit(): void {
     this.allnote()
+    
     this.data.currentMessage.subscribe(message => this.searchString = message)
   }
- 
+
+  
+  ngAfterViewInit(){
+    console.log("ngAfterViewInit");
+    
+    this.noteService.RefreshRequired.subscribe(responce=>{
+      this.allnote()
+    })
+  }
 
 
   allnote() {
@@ -31,7 +40,7 @@ export class GetAllNoteComponent implements OnInit {
       console.log("User all notes are : ", items);
       for (var i of items.data) {
         if (i.isArchived == false && i.isDeleted == false) {
-          this.usernote.push(i)
+          this.usernote.unshift(i)
         }
       }
       console.log("The filterArrayNote is : ", this.usernote);
